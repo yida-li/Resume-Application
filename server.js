@@ -4,7 +4,13 @@ const express = require('express');
 
 const app = express();
 
-app.get ('/', (req,res) => res.send('Hello Eden'));
+app.get('/', (req, res) => res.send('Hello Eden'));
+
+// paths to other files
+
+app.use('/api/users', require('./routes/users'));
+app.use('/api/authentication', require('./routes/authentication'));
+app.use('/api/contacts', require('./routes/contacts'));
 
 const PORT = process.env.PORT || 5000;
 
