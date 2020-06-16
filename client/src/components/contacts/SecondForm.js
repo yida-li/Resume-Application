@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import contactContext from '../../context/contact/contactContext';
 
-const Form = () => {
+const SecondForm = () => {
   const context = useContext(contactContext);
   const { current } = context;
   const [contact, setContact] = useState({
@@ -59,20 +59,20 @@ const Form = () => {
   return (
     <form onSubmit={onSubmit}>
       <h2 className='text-primary'>
-        {current === null ? 'Add Contact' : 'Edit Contact'}
+        {current === null ? 'Add Job' : 'Edit Job'}
       </h2>
       <input
         type='text'
         name='name'
         value={name}
-        placeholder='Name'
+        placeholder='Company'
         onChange={onChange}
       />
       <input
         type='email'
         name='email'
         value={email}
-        placeholder='Email'
+        placeholder='Department'
         onChange={onChange}
       />
       <input
@@ -82,35 +82,35 @@ const Form = () => {
         placeholder='Phone'
         onChange={onChange}
       />
-      <h5>Contact type</h5>
+      <h5>Company type</h5>
       <input
         type='radio'
         name='type'
-        value='personal'
-        checked={type === 'personal'}
+        value='public'
+        checked={type === 'public'}
         onChange={onChange}
       />
-      Personal{' '}
+      Public{' '}
       <input
         type='radio'
         name='type'
-        value='professional'
-        checked={type === 'professional'}
+        value='private'
+        checked={type === 'private'}
         onChange={onChange}
       />
-      Professional{' '}
+      Private{' '}
       <input
         type='radio'
         name='type'
-        value='recreactional'
-        checked={type === 'recreactional'}
+        value='None profit Organization'
+        checked={type === 'None profit Organization'}
         onChange={onChange}
       />
-      Recreational{' '}
+      None profit Organization{' '}
       <div>
         <input
           type='submit'
-          value={current === null ? 'Add Contact' : 'Edit Contact'}
+          value={current === null ? 'Add Job' : 'Edit Job'}
           className='btn btn-primary btn-block'
         />
       </div>
@@ -125,4 +125,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default SecondForm;
