@@ -2,13 +2,12 @@
 
 const express = require('express');
 
-
-
-const connectDB= require('./config/db');
-
+const connectDB = require('./config/db');
 
 const app = express();
 
+// Initialize middleware
+app.use(express.json({ extended: false })); // allows to accept body data supposedely
 
 connectDB();
 
