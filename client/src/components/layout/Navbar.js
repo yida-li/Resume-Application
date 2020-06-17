@@ -45,6 +45,11 @@ const Navbar = ({ title, icon }) => {
       <li>
         <a href='https://www.w3schools.com/html/html_links.asp'>Job Search</a>
       </li>
+      <li>
+        <a href='https://play.google.com/store/apps/details?id=com.nintendo.zaca&hl=en_GB'>
+          Camping Game
+        </a>
+      </li>
     </Fragment>
   );
 
