@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
+// authentication is meant to access private routes
 router.post('/',(req,res) => {
 
     res.send('create/post');
