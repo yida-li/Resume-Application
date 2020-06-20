@@ -5,6 +5,10 @@ const { check, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const config = require('config'); // the package config not to be confused with config of the db/defaults wow confusing much?
 const jwt = require('jsonwebtoken');
+
+
+
+
 router.post(
   '/',
   [
