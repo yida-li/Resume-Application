@@ -19,8 +19,13 @@ So far, i can send json data, from an API. a few parameters and requirements are
 meant as the form of a user registration, it automatically comes with a token which lets use stay "logged in" 
 
 
+i am at authentication route atm, now it is a hard topic, to deny it would be ignorant right? 
+but i need to study thoroughly and understand every important component, 
+anyways chapter 45: Authentication Route 
 
-== friday 21:35
+
+
+== friday 22:47
 == saturday june 19th, 2020
 
 
