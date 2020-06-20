@@ -42,7 +42,7 @@ router.post(
         },
       };
 
-      jwt.sign(
+      jwt.sign(    // the jwt object is signing the payload i guess?
         payload,
         config.get('jwtSecret'),
         {
@@ -50,7 +50,7 @@ router.post(
         },
         (err, token) => {
           if (err) throw err;
-          res.json({ token });
+          res.json({ token }); // the important thing to understand is that we get the token, if all conditions above is satisfied
         }
       );
     } catch (err) {
