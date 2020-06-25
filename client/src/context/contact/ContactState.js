@@ -1,7 +1,8 @@
-
 import React, { useReducer } from 'react';
 import axios from 'axios';
 import ContactContext from './contactContext';
+
+import { v4 as uuidv4 } from 'uuid';
 import contactReducer from './contactReducer';
 import {
   ADD_CONTACT,
@@ -28,9 +29,14 @@ const ContactState = (props) => {
     ],
   };
 
-  const [state,dispatch] = useReducer(contactReducer, initialState);
+  const [state, dispatch] = useReducer(contactReducer, initialState);
   // -----ACtions to be created below--------
-  // Add Contact
+  // Add Contact  ultimately connects to API
+
+  const addContact = (contact) => {
+    contact.id = uuidv4();
+    dispatch({ type: ADD_CONTACT, payload: contact });
+  };
 
   // Delete Contact
 
@@ -44,21 +50,17 @@ const ContactState = (props) => {
 
   // clear contact filter
 
-
-
-
   //let's return provider whichs allows me to wrap entire application with this context
   return (
     <ContactContext.Provider
       value={{
         contacts: state.contacts,
-       
+        addContact,
       }}
     >
       {props.children}
     </ContactContext.Provider>
   );
-    
-    }; 
+};
 
 export default ContactState;
