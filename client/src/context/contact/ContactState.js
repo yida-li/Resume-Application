@@ -40,10 +40,25 @@ const ContactState = (props) => {
 
   // Delete Contact
 
+  const deleteContact = (id) => {
+  
+    dispatch({ type: DELETE_CONTACT, payload: id });
+  };
+
+
   // Set current Contact
 
-  // clear current contact
 
+
+  const setCurrent = contact =>{
+
+    dispatch({ type: SET_CURRENT, payload:contact});
+  };
+  // clear current contact
+  const clearCurrent = () =>{
+
+    dispatch({ type: CLEAR_CURRENT});
+  };
   // we want to be able to update the contact
 
   // filter contacts
@@ -55,7 +70,11 @@ const ContactState = (props) => {
     <ContactContext.Provider
       value={{
         contacts: state.contacts,
+        current: state.current, 
         addContact,
+        deleteContact,
+        clearCurrent,
+        setCurrent
       }}
     >
       {props.children}
