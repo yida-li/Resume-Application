@@ -10,8 +10,18 @@ import ContactState from './context/contact/ContactState';
 
 const App = () => {
   return (
-   
-   <Navbar></Navbar>
+    <Router>
+      <Fragment>
+        <Navbar></Navbar>
+
+        <div className='container'>
+          <Switch>
+            <Route exact path='/' component={Home}></Route>
+            <Route exact path='/about' component={About} />
+          </Switch>
+        </div>
+      </Fragment>
+    </Router>
   );
 };
 
