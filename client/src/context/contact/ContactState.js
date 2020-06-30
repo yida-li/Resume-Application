@@ -27,7 +27,7 @@ const ContactState = (props) => {
       {},
       {},
     ],
-    cuurent:null
+    curent:null
   };
 
   const [state, dispatch] = useReducer(contactReducer, initialState);
@@ -61,10 +61,18 @@ const ContactState = (props) => {
     dispatch({ type: CLEAR_CURRENT});
   };
   // we want to be able to update the contact
-
+const updateContact =(contact) => {
+  dispatch({type: UPDATE_CONTACT, payload :contact})
+}
   // filter contacts
-
+const filterContacts =text=>{
+  dispatch({type:FILTER_CONTACTS, payload :text});
+}
   // clear contact filter
+
+const clearFilter =()=> {
+  dispatch ({ type:CLEAR_FILTER});
+}
 
   //let's return provider whichs allows me to wrap entire application with this context
   return (
@@ -72,10 +80,14 @@ const ContactState = (props) => {
       value={{
         contacts: state.contacts,
         current: state.current, 
+        filtered: state.filtered,
         addContact,
         deleteContact,
         clearCurrent,
-        setCurrent
+        setCurrent,
+        filterContacts,
+        clearFilter,
+        updateContact,
       }}
     >
       {props.children}
