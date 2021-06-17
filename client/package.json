@@ -8,11 +8,11 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": ">=0.21.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react-dom": "^16.14.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.1",
+    "react-scripts": "^3.4.4",
     "react-transition-group": "^4.4.1",
-    "uuid": "^8.2.0"
+    "uuid": "^8.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -35,5 +35,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:4000"
+  "proxy": "http://localhost:4000",
+  "devDependencies": {
+    "webpack-dev-server": "^3.11.2"
+  }
 }
