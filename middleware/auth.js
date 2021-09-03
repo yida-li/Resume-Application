@@ -20,7 +20,7 @@ module.exports = function (req, res, next) {
     next();// w/e this is
   } catch (err) {
 
-res.status(401).json({msg:'Tokebn is not valid'});
+res.status(401).json({msg:'Token is not valid'});
 
 
 
