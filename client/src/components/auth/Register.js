@@ -6,17 +6,17 @@ export const Register = () => {
     const alertContedxt = useContext(AlertContext);
     const authContext = useContext(AuthContext);
     const { setAlert } = alertContedxt;
-    const { register,error, clearErrors } = authContext;
+    const { register, error, clearErrors } = authContext;
 
-    
+
     useEffect(() => {
-       
+
         if (error === 'user already exist') {
-          setAlert(error, 'danger');
-          clearErrors();
+            setAlert(error, 'danger');
+            clearErrors();
         }
         // eslint-disable-next-line
-      }, [error]);
+    }, [error]);
     const [user, setUser] = useState({
 
 
